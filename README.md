@@ -142,6 +142,27 @@ Configured MCP servers in this repo:
 - Use `AGENTS.md` for repo-wide operating rules, especially tool-routing constraints.
 - If you add commands or skills, update this README so the repo stays self-explanatory.
 
+If this repo is immutable but you still need to override a config value, create a separate config file and point `OPENCODE_CONFIG` at it from your shell environment. OpenCode merges config sources, so the override file only needs the keys you want to change.
+
+Example shell setup:
+
+```bash
+export OPENCODE_CONFIG="$HOME/.config/opencode-overrides/work-config.json"
+```
+
+Example override file to disable the `agent-browser` skill without modifying `~/.config/opencode` or using a project config:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "skill": {
+      "agent-browser": "deny"
+    }
+  }
+}
+```
+
 ## Troubleshooting
 
 - Treat `opencode.json` as sensitive local infrastructure. It may contain API-bearing config.
