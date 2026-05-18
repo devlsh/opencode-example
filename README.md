@@ -34,7 +34,7 @@ Core files:
 
 ```bash
 mkdir -p ~/.config
-git clone <your-repo-url> ~/.config/opencode
+git clone git@github.com:devlsh/opencode-example.git ~/.config/opencode
 cp ~/.config/opencode/me.json.example ~/.config/opencode/me.json
 ```
 
